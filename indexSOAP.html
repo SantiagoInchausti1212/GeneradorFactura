@@ -7,159 +7,144 @@
 	<body>
 
 		<h1> GENERACION DE FACTURA POR SOAP</h1>
-
-		<table border="0">
-			<tr>
-				<td>Destino</td><td> <input type="text" id="destino" name="destino" /></td>
-			</tr>
-			<tr>
-				<td>Fecha de Nacimiento</td><td> <input type="text" id="fnacimiento" name="fnacimiento" /></td>
-			</tr>
-			<tr>
-				<td>Forma de Pago</td><td> <input type="text" id="fpago" name="fpago" /></td>
-			</tr>
-			<tr>
-				<td>Monto bruto</td><td> <input type="text" id="montoBruto" name="montoBruto" /></td>
-			</tr>
-			<tr>
-				<td>Monto no facturable</td><td> <input type="text" id="montoNoFacturable" name="montoNoFacturable" /></td>
-			</tr>
-			<tr>
-				<td>Nro. Compra</td><td> <input type="text" id="nroCompra" name="nroCompra" /></td>
-			</tr>
-			<tr>
-				<td><strong>PRODUCTOS</strong></td>
-			</tr>
-			<tr>
-				<table border="0">
+		<table border="1" style="font-size: 12px;">
+			<tr align="top" valign="top"><td>
+				<table border="0" style="font-size: 12px;">
 					<tr>
-						<td>Indicador Facturación</td><td>  <input type="text" id="indicadorFacturacion" name="indicadorFacturacion" /></td>
+						<td><strong>FACTURA</strong></td>
 					</tr>
 					<tr>
-						<td>Nombre</td><td>  <input type="text" id="nombreProducto" name="nombreProducto" /></td>
+						<td>Destino</td><td> <input type="text" id="destino" name="destino" /></td>
+						<td>Fecha de Vencimiento</td><td> <input type="text" id="fvencimiento" name="fvencimiento" value="2016-12-31"/></td>
+						<td>Forma de Pago</td><td> <input type="text" id="fpago" name="fpago" value="1"/></td>
+						<td>Monto bruto</td><td> <input type="text" id="montoBruto" name="montoBruto" value="0"/></td>
+						<td>Monto no facturable</td><td> <input type="text" id="montoNoFacturable" name="montoNoFacturable" value="5000"/></td>
+						<td>Nro. Compra</td><td> <input type="text" id="nroCompra" name="nroCompra" value="1"/></td>
+						<td>Nombre</td><td>  <input type="text" id="nombreReceptor" name="nombreReceptor" value="DGI"/></td>
+						<td>Pais</td><td>  <input type="text" id="paisReceptor" name="paisReceptor" value="UY"/></td>
 					</tr>
 					<tr>
-						<td>Cantidad</td><td>  <input type="text" id="cantidad" name="cantidad" /></td>
-					</tr>
+						<td>Tasa Basica IVA</td><td> <input type="text" id="tasaBasicaIVA" name="tasaBasicaIVA" value="22"/></td>
+						<td>Tasa minima IVA</td><td> <input type="text" id="tasaMinimaIVA" name="tasaMinimaIVA" value="10"/></td>
+						<td>Texto Adicional</td><td> <input type="text" id="textoAdicional" name="textoAdicional" value="Tetxo de prueba"/></td>
+						<td>Tipo</td><td> <input type="text" id="tipo" name="tipo" value="111"/></td>
+						<td>Tipo Cambio</td><td> <input type="text" id="tipoCambio" name="tipoCambio" value="1"/></td>
+						<td>Tipo Moneda</td><td> <input type="text" id="tipoMoneda" name="tipoMoneda" value="UYU"/></td>
+						<td>Total monto Exportacion</td><td> <input type="text" id="totalMontoExportacion" value="0"name="totalMontoExportacion"/></td>
+					</tr>	
 					<tr>
-						<td>Precio Unitario</td><td>  <input type="text" id="precioUnitario" name="precioUnitario" /></td>
-					</tr>
+						<td>Total monto Impuesto Percibido</td><td> <input type="text" id="totalMontoImpuestoPercibido" name="totalMontoImpuestoPercibido" value="0"/></td>
+						<td>Total monto IVA en suspenso</td><td> <input type="text" id="totalMontoIVASuspenso" name="totalMontoIVASuspenso" value="0"/></td>
+						<td>Total monto IVA otra tasa</td><td> <input type="text" id="totalMontoIVAOtraTasa" name="totalMontoIVAOtraTasa" value="0" /></td>
+						<td>Total monto IVA tasa basica</td><td> <input type="text" id="totalMontoIVATasaBasica" name="totalMontoIVATasaBasica" value="20000"/></td>
+						<td>Total monto IVA tasa minima</td><td> <input type="text" id="totalMontoIVATasaMinima" name="totalMontoIVATasaMinima" value="0"/></td>
+						<td>Total monto no gravado</td><td> <input type="text" id="totalMontoNoGravado" name="totalMontoNoGravado" value="0"/></td>
+					</tr>	
 					<tr>
-						<td>Unidad de medida</td><td>  <input type="text" id="unidadMedida" name="unidadMedida" /></td>
-					</tr>
-					<tr>
-						<td>Agente Responsable</td><td>  <input type="text" id="agenteResponsable" name="agenteResponsable" /></td>
-					</tr>
-					<tr>
-						<td>Descripcion</td><td>  <input type="text" id="descripcionProducto" name="descripcionProducto" /></td>
-					</tr>
-					<tr>
-						<td>Monto</td><td>  <input type="text" id="montoProducto" name="montoProducto" /></td>
-					</tr>
-					<tr>
-						<td>Monto Total</td><td>  <input type="text" id="montoTotalProducto" name="montoTotalProducto" /></td>
-					</tr>
-					<tr>
-						<td>Nro. Linea</td><td>  <input type="text" id="nroLinea" name="nroLinea" /></td>
-					</tr>
-					<tr>
-						<td>Porcentaje Descuento</td><td>  <input type="text" id="porcentajeDescuento" name="porcentajeDescuento" /></td>
-					</tr>
-					<tr>
-						<td>Porcentaje Recargo</td><td>  <input type="text" id="porcentajeRecargo" name="porcentajeRecargo" /></td>
-					</tr>
+					
 				</table>
-			</tr>
+				</td>	
+				</tr>
+				<tr>
 
-			<tr>
-				<td><strong>RECEPTOR</strong></td>
-			</tr>
-			<tr>
-				<table border="0">
+				<td>
+				<strong>RECEPTOR</strong>
+				<table border="0" style="font-size: 12px;">
 					<tr>
-						<td>Ciudad</td><td>  <input type="text" id="ciudadReceptor" name="ciudadReceptor" /></td>
-					</tr>
-					<tr>
-						<td>CP</td><td>  <input type="text" id="CPReceptor" name="CPReceptor" /></td>
-					</tr>
-					<tr>
-						<td>Departamento</td><td>  <input type="text" id="departamentoReceptor" name="departamentoReceptor" /></td>
-					</tr>
-					<tr>
-						<td>Direccion</td><td>  <input type="text" id="direccionReceptor" name="direccionReceptor" /></td>
+						<td>Ciudad</td><td>  <input type="text" id="ciudadReceptor" name="ciudadReceptor" value="Montevideo"/></td>
+						<td>CP</td><td>  <input type="text" id="CPReceptor" name="CPReceptor" value="11100"/></td>
+						<td>Departamento</td><td>  <input type="text" id="departamentoReceptor" name="departamentoReceptor" value="Montevideo"/></td>
+						<td>Direccion</td><td>  <input type="text" id="direccionReceptor" name="direccionReceptor" value="Fernndez 1534"/></td>
 					</tr>
 					<tr>
 						<td><strong>DOCUMENTO</strong></td>
 					</tr>
 					<tr>
+						<td>Documento</td><td>  <input type="text" id="documento" name="documento" value="214844360018" /></td>
+						<td>Nombre</td><td>  <input type="text" id="paisDocumento" name="paisDocumento" value="UY"/></td>
+						<td>Tipo</td><td>  <input type="text" id="tipoDocumento" name="tipoDocumento" value="2"/></td>
+					</tr>
+				</table>	
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<table border="0" style="font-size: 12px;">
+					<tr>
+						<td><strong>PRODUCTOS</strong></td>
+					</tr>
+					<tr>
 						<td>
 							<table>
 								<tr>
-									<td>Documento</td><td>  <input type="text" id="documento" name="documento" /></td>
+									<td>
+										<div id="add" style="background-color: #000;color: #FFF;">Agregar </div>
+									</td>
+									<td>
+										<div id="del" style="background-color: #000;color: #FFF;">Eliminar </div>
+									</td>
 								</tr>
 								<tr>
-									<td>Nombre</td><td>  <input type="text" id="nombreDocumento" name="nombreDocumento" /></td>
-								</tr>
-								<tr>
-									<td>Tipo</td><td>  <input type="text" id="tipoDocumento" name="tipoDocumento" /></td>
+									<td colspan="2">
+										<p style="font-size:'8px'">(Esta versi&oacute;n solo contempla un producto)</p>
+									</td>
 								</tr>
 							</table>
+							<p>
+							    <table id="tabla" border=1 style="font-size: 12px;">
+							        <tr>
+							            <td>Indicador Facturacion</td>
+							            <td width="40px">Nombre</td>
+							            <td>Cantidad</td>
+							            <td>Precio Unitario</td>
+							            <td>Unidad de medida</td>
+							            <td>Agente Responsable</td>
+							            <td>Descripcion</td>
+							            <td>Monto</td>
+							            <td>Monto Total</td>
+							            <td>Nro.Linea</td>
+							            <td>Porcentaje Descuento</td>
+							            <td>Porcentaje Recargo</td>
+							            <!-- podemos añadir tantas columnas como deseemos -->
+							            <!--<td>tercera columna</td>-->
+							        </tr>
+							        <tr>
+										<td><input type="text" id="indicadorFacturacion" name="indicadorFacturacion" value="3"/></td>
+										<td width="40px"><input type="text" id="nombreProducto" name="nombreProducto" width="40px" value="Prueba Producto"/></td>
+										<td><input type="text" id="cantidad" name="cantidad" value="10"/></td>
+										<td><input type="text" id="precioUnitario" name="precioUnitario" value="1000"/></td>
+										<td><input type="text" id="unidadMedida" name="unidadMedida" value="kg"/></td>
+										<td><input type="text" id="agenteResponsable" name="agenteResponsable" value="R" /></td>
+										<td><input type="text" id="descripcionProducto" name="descripcionProducto" value="Texto"/></td>
+										<td><input type="text" id="montoProducto" name="montoProducto" value="10000" /></td>
+										<td><input type="text" id="montoTotalProducto" name="montoTotalProducto" value="10000"/></td>
+										<td><input type="text" id="nroLinea" name="nroLinea" value="1" /></td>
+										<td><input type="text" id="porcentajeDescuento" name="porcentajeDescuento" value="0" /></td>
+										<td><input type="text" id="porcentajeRecargo" name="porcentajeRecargo" value="0" /></td>
+									</tr>
+							    </table>
+							</p>
 						</td>
 					</tr>
 					<tr>
-						<td>Nombre</td><td>  <input type="text" id="nombreReceptor" name="nombreReceptor" /></td>
+						<td align="left" valign="left"><input type="button" value="ENVIAR" id="generate" name="generate" />
+						</td>
 					</tr>
-					<tr>
-						<td>Pais</td><td>  <input type="text" id="paisReceptor" name="paisReceptor" /></td>
-					</tr>
-					<tr>
-						<td>Tasa Basica IVA</td><td> <input type="text" id="tasaBasicaIVA" name="tasaBasicaIVA" /></td>
-					</tr>
-					<tr>
-						<td>Tasa minima IVA</td><td> <input type="text" id="tasaMinimaIVA" name="tasaMinimaIVA" /></td>
-					</tr>	
-					<tr>
-						<td>Texto Adicional</td><td> <input type="text" id="textoAdicional" name="textoAdicional" /></td>
-					</tr>
-					<tr>
-						<td>Tipo</td><td> <input type="text" id="tipo" name="tipo" /></td>
-					</tr>
-					<tr>
-						<td>Tipo Cambio</td><td> <input type="text" id="tipoCambio" name="tipoCambio" /></td>
-					</tr>
-					<tr>
-						<td>Tipo Moneda</td><td> <input type="text" id="tipoMoneda" name="tipoMoneda" /></td>
-					</tr>
-					<tr>
-						<td>Total monto Exportacion</td><td> <input type="text" id="totalMontoExportacion" name="totalMontoExportacion" /></td>
-					</tr>
-					<tr>
-						<td>Total monto Impuesto Percibido</td><td> <input type="text" id="totalMontoImpuestoPercibido" name="totalMontoImpuestoPercibido" /></td>
-					</tr>
-					<tr>
-						<td>Total monto IVA en suspenso</td><td> <input type="text" id="totalMontoIVASuspenso" name="totalMontoIVASuspenso" /></td>
-					</tr>
-					<tr>
-						<td>Total monto IVA otra tasa</td><td> <input type="text" id="totalMontoIVAOtraTasa" name="totalMontoIVAOtraTasa" /></td>
-					</tr>
-					<tr>
-						<td>Total monto IVA tasa basica</td><td> <input type="text" id="totalMontoIVATasaBasica" name="totalMontoIVATasaBasica" /></td>
-					</tr>
-					<tr>
-						<td>Total monto IVA tasa minima</td><td> <input type="text" id="totalMontoIVATasaMinima" name="totalMontoIVATasaMinima" /></td>
-					</tr>
-					<tr>
-						<td>Total monto no gravado</td><td> <input type="text" id="totalMontoNoGravado" name="totalMontoNoGravado" /></td>
-					</tr>	
-					<tr><td>&nbsp;</td><td align="right" valign="right"><input type="button" value="ENVIAR" id="generate" name="generate" /></td></tr>
 				</table>
-			</tr>
+				<br>
+				<br>
 			
+		
+		<table>
+			<tr valign="top" align="middle" >
+			<td valign="top" align="middle" >
+				<strong>RESULTADO </strong>
+			</td>
+			<td>
+				<div id="resultado" name="resultado"> </div>
+			</td>
+			</tr>
 		</table>
-		
-
-		
-		
 	</body>
 	<footer>
 		

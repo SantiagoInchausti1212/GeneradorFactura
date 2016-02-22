@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title> REALIZAR CONSULTA SOAP </title>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    	<script type="text/javascript" src="gfactura.js"></script>
+    	<script type="text/javascript">
+
+			function generarFactura(){
+    			window.location="indexSOAP.html";
+			}
+
+			function exportarPDF(){
+    			window.location="exportarFacturaPDF.html";
+			}
+
+    	</script>
+	</head>
+	<body>
+
+		<h2> GENERACION DE FACTURA POR SOAP</h2>
+		<table border="1" style="font-size: 12px;">
+			<tr align="top" valign="top">
+				<td>
+					<input type="button" value=" GENERAR FACTURA" onclick="generarFactura();" />
+				</td>
+			</tr>
+		</table>
+		<h2> IMPRIMIR FACTURA (PDF)</h2>
+		<table border="1" style="font-size: 12px;">
+			<tr align="top" valign="top">
+				<td>
+					<input type="button" value=" EXPORTAR PDF" onclick="exportarPDF();"/>
+				</td>
+			</tr>
+		</table>
+	</body>
+	<footer>
+		
+	</footer>
+</html>
